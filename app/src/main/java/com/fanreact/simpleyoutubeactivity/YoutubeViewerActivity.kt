@@ -56,7 +56,7 @@ class YoutubeViewerActivity : YouTubeBaseActivity() {
     private fun getYoutubeVideoIdAndPlay(url: String) {
         if (isYoutube(url)) {
             var startTime = this@YoutubeViewerActivity.startTime
-            val videoId = if (url.contains("youtu.be")) {
+            val videoId = if (url.contains("youtu.be") && !url.contains("youtube.com")) {
                 val substringAfterSlash = url.substringAfter("youtu.be/")
                 if (substringAfterSlash.contains("?")) {
                     if (substringAfterSlash.contains("t=")) {
