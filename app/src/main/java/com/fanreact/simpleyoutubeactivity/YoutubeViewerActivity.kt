@@ -148,7 +148,7 @@ class YoutubeViewerActivity : YouTubeBaseActivity() {
         })
 
         fun getYoutubeVideoIdFromUrl(url: String) : String? {
-            return if (url.contains("youtu.be")) {
+            return if (url.contains("youtu.be") && !url.contains("youtube.com")) {
                 val substringAfterSlash = url.substringAfter("youtu.be/")
                 if (substringAfterSlash.contains("?")) {
                     substringAfterSlash.substringBefore("?")
