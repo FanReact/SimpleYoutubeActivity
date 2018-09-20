@@ -1,8 +1,16 @@
+ext {
+    PUBLISH_GROUP_ID = 'com.fanreact'
+    PUBLISH_ARTIFACT_ID = 'simpleyoutubeactivity'
+    PUBLISH_VERSION = '1.0.0'
+}
+
 apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'android-maven'
 
 android {
     compileSdkVersion 28
@@ -18,6 +26,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        kotlinOptions.freeCompilerArgs += ['-module-name', "$PUBLISH_GROUP_ID.$PUBLISH_ARTIFACT_ID"]
     }
 }
 
