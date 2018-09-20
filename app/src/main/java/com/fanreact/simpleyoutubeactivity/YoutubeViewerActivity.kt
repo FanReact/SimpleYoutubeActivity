@@ -135,7 +135,7 @@ class YoutubeViewerActivity : YouTubeBaseActivity() {
         private const val KEY_YOUTUBE_URL = "KEY_YOUTUBE_URL"
         private const val KEY_START_TIME = "KEY_START_TIME"
 
-        fun startWithFullUrl(context: Context?, youtubeApiKey: String, youtubeUrl: String, startTime: Int = 0) = context?.startActivity(Intent(context, YoutubeViewerActivity::class.java).apply {
+        fun startWithUrl(context: Context?, youtubeApiKey: String, youtubeUrl: String, startTime: Int = 0) = context?.startActivity(Intent(context, YoutubeViewerActivity::class.java).apply {
             putExtra(KEY_YOUTUBE_API_KEY, youtubeApiKey)
             putExtra(KEY_YOUTUBE_URL, youtubeUrl)
             putExtra(KEY_START_TIME, startTime)
